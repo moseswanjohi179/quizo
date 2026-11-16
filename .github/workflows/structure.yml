@@ -1,4 +1,4 @@
-﻿name: structure
+name: structure
 on: pull_request
 jobs:
   check:
@@ -7,6 +7,6 @@ jobs:
       - uses: actions/checkout@v4
       - name: Block stray files
         run: |
-          allowed='^(\.gitignore|LICENSE|host/host\.py|host/questions\.py|host/scoring\.py|player/player\.py|player/ui\.py|server/app\.py|server/requirements\.txt|shared/CONTRACT\.md|shared/config\.py|\.github/workflows/structure\.yml)$'
+          allowed='^(\.gitignore|LICENSE|\.github/scripts/update_reqs\.py|\.github/workflows/update-requirements\.yml|host/host\.py|host/questions\.py|host/scoring\.py|player/player\.py|player/ui\.py|server/app\.py|server/requirements\.txt|shared/CONTRACT\.md|shared/config\.py|\.github/workflows/structure\.yml)$'
           bad=$(git ls-files | grep -Ev "$allowed" || true)
           if [ -n "$bad" ]; then echo "Stray files:"; echo "$bad"; exit 1; fi
