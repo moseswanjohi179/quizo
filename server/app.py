@@ -4,9 +4,13 @@ sys.path.append(str(Path(__file__).resolve().parent.parent))
 import fastapi
 import uvicorn
 import time
+import os
 
 from fastapi import FastAPI
 
+
+os.environ["TZ"] = "Africa/Nairobi"
+time.tzset()
 
 app = FastAPI()
 
