@@ -14,8 +14,7 @@ app = FastAPI()
 def hello():
     response = {
         "message":"!!Welcome To Quizo!!",
-        "current_time": time.ctime
+        "current_time": time.ctime()
     }
     return response
 
-    
