@@ -12,11 +12,12 @@ server_url = config.server_url() if config.server_url() != None else "https://js
 server_response = requests.get(server_url)
 if server_response.status_code == 200:
     welcoming_message = server_response.json()
+    print(welcoming_message)
 else:
-    print("Issue occured try again please")
+    print(f"Website gave a {server_response.status_code} error T_T")
 """except:
     print("!!!Bad URL T_T !!!")"""
 
 
-print(welcoming_message)
+
 
